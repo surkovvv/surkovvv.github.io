@@ -12,20 +12,16 @@
     {% endif %}
   </head>
   <body>
-    <a class="skip-link" href="#content">К содержанию</a>
+    <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header shell">
       <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.author | escape }}</a>
-      <nav aria-label="Навигация">
-        <a href="{{ '/#notes' | relative_url }}">Заметки</a>
+      <nav aria-label="Main navigation">
+        <a href="{{ '/#notes' | relative_url }}">Notes</a>
         <a href="{{ site.github_profile }}">GitHub</a>
       </nav>
     </header>
     <main id="content" class="shell" tabindex="-1">
       {{ content }}
     </main>
-    <footer class="site-footer shell">
-      <span>{{ site.author | escape }}</span>
-      <a href="{{ '/#notes' | relative_url }}">К списку заметок</a>
-    </footer>
   </body>
 </html>

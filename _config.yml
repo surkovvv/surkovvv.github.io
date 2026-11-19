@@ -1,7 +1,7 @@
-title: Технические заметки
+title: Technical notes
 author: surkovvv
-description: Заметки о языковых моделях, GPU и экспериментах с кодом.
-lang: ru
+description: Notes on language models, GPU performance, and what I learn by implementing things from scratch.
+lang: en
 url: https://surkovvv.github.io
 github_profile: https://github.com/surkovvv
 timezone: Europe/Belgrade
@@ -11,6 +11,7 @@ highlighter: rouge
 kramdown:
   input: GFM
   math_engine: mathjax
+  toc_levels: 2..3
 defaults:
   - scope:
       path: ""

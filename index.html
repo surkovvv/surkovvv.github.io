@@ -1,21 +1,18 @@
 ---
 layout: default
 ---
-<section class="hero" aria-labelledby="site-title">
-  <div class="hero-text">
-    <h1 id="site-title">Технические<br>заметки<span>.</span></h1>
-    <p class="lede">{{ site.description | escape }}</p>
-  </div>
-  <div class="tile-field" aria-hidden="true"></div>
-</section>
+<header class="intro">
+  <h1>{{ site.title | escape }}</h1>
+  <p class="lede">{{ site.description | escape }}</p>
+</header>
 
 <section class="notes" id="notes" aria-labelledby="notes-title">
-  <h2 id="notes-title">Заметки</h2>
+  <h2 id="notes-title">Writing</h2>
   {% if site.posts.size > 0 %}
     <ul class="note-list">
       {% for post in site.posts %}
         <li class="note-row">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d.%m.%Y' }}</time>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
           <div>
             <h3><a href="{{ post.url | relative_url }}"{% if post.lang %} lang="{{ post.lang | escape }}"{% endif %}>{{ post.title | escape }}</a></h3>
             {% if post.description %}<p{% if post.lang %} lang="{{ post.lang | escape }}"{% endif %}>{{ post.description | escape }}</p>{% endif %}
@@ -24,6 +21,6 @@ layout: default
       {% endfor %}
     </ul>
   {% else %}
-    <p class="empty-state">Первая заметка в работе.</p>
+    <p class="empty-state">The first note is in progress.</p>
   {% endif %}
 </section>

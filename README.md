@@ -1,28 +1,37 @@
-# Технические заметки
+# Technical notes
 
-Статический блог на Jekyll. Публикуется через GitHub Pages из ветки `main`, папки `/ (root)`.
+A Jekyll blog published on GitHub Pages from the root of `main`.
 
-## Локальный просмотр
+## Preview locally
 
-С установленными Ruby 3.3 и Bundler выполните из этой папки:
+With Ruby 3.3 and Bundler installed, run these commands from the project directory.
 
 ```sh
 bundle install
 bundle exec jekyll serve --drafts
 ```
 
-Откройте `http://127.0.0.1:4000`. Без `--drafts` видны только опубликованные заметки.
+Open `http://127.0.0.1:4000`. Omit `--drafts` to preview the public site.
 
-## Новая заметка
+## Write a note
 
-Пишите в `_drafts/`. Эта папка исключена из Git. Когда текст готов, перенесите файл в `_posts/` с именем вида `YYYY-MM-DD-flash-attention.md`, закоммитьте его и отправьте в `main`. Заголовок и описание из YAML в начале файла автоматически появятся на главной.
+Use `_drafts/` for unpublished Markdown. Git ignores this directory. When the note is ready, move it to `_posts/` with a name such as `YYYY-MM-DD-flash-attention.md`, then commit and push to `main`. The home page lists published notes by date and pulls each title and description from its front matter.
 
 ```yaml
 ---
 title: FlashAttention
-description: От обращений к памяти GPU до реализации на Triton и замеров.
+description: From GPU memory traffic to a Triton implementation and benchmarks.
 math: true
 ---
 ```
 
-Формулы оформляйте через `$$ ... $$`, используя отдельный абзац для блочной формулы. В заметках с `math: true` их отрисовывает MathJax. Для подсветки кода указывайте язык после открывающих трёх обратных кавычек, например `python`. Для английской заметки добавьте `lang: en`. Иллюстрации можно хранить в `assets/` и ссылаться на них через `relative_url`.
+For a longer note, add this block wherever the contents should appear. Jekyll generates links from the level-two and level-three headings.
+
+```markdown
+**Contents**
+
+* Contents
+{:toc}
+```
+
+Use `$$ ... $$` for equations, with a separate paragraph for display math. Set `math: true` on notes that need MathJax. Specify a language such as `python` on fenced code blocks for syntax highlighting. Store figures under `assets/` and use `relative_url` in their links.
