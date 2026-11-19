@@ -1,0 +1,23 @@
+title: Технические заметки
+author: surkovvv
+description: Заметки о языковых моделях, GPU и экспериментах с кодом.
+lang: ru
+url: https://surkovvv.github.io
+github_profile: https://github.com/surkovvv
+timezone: Europe/Belgrade
+permalink: /notes/:title/
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  math_engine: mathjax
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
